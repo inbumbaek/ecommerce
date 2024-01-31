@@ -30,6 +30,10 @@ const FooterComponent = () => {
         ))}
       </ul>
     </Gutter>
+
+    <div className={classes.footer}>
+      
+    </div>
     </footer>
   )
 }
