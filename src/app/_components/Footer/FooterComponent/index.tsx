@@ -2,12 +2,13 @@
 
 import React from 'react'
 import classes from './index.module.scss'
-import { inclusions, noHeaderFooterUrls } from '../../../constants'
+import { inclusions, noHeaderFooterUrls, profileNavItems } from '../../../constants'
 import { usePathname } from 'next/navigation';
 import { Gutter } from '../../Gutter';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Footer } from '../../../../payload/payload-types';
+import { Button } from '../../Button';
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname();
@@ -40,6 +41,24 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
             <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
           </Link>
           <p>{footer.copyright}</p>
+
+          <div className={classes.socialLinks}>
+            {profileNavItems.map((item) => {
+              const icon = '';
+
+              return (
+                <Button
+                  key={item.link.label}
+                  el="link"
+                  href={item.link.url}
+                  newTab={true}
+                  className={classes.socialLinkItem}
+                  >
+                  {item.link.label}
+                </Button>
+              )
+            })}
+          </div>
         </div>
       </Gutter>
     </div>
