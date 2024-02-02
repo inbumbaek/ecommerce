@@ -12,7 +12,7 @@ import { Button } from '../../Button';
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathname = usePathname();
-
+  const navItems = footer?.navItems || [];
   return (
     <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ''}>
     <Gutter>
@@ -43,7 +43,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
           <p>{footer.copyright}</p>
 
           <div className={classes.socialLinks}>
-            {profileNavItems.map((item) => {
+            {navItems.map((item) => {
               const icon = '';
 
               return (
