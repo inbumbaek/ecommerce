@@ -11,6 +11,7 @@ import classes from './index.module.scss'
 export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) => {
   return (
     <Gutter className={classes.hero}>
+      <h1>THIS IS OUR CUSTOM HERO</h1>
       {/* <div className={classes.content}>
         <RichText content={richText} />
         {Array.isArray(links) && links.length > 0 && (
