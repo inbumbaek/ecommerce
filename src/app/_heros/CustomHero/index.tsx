@@ -13,7 +13,7 @@ export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) =
 
   return (
     <section className={classes.hero}>
-      <div className={classes.heroWrapper}>
+      <div className={classes.heroWrapper} style={{ backgroundImage: `url(${mediaUrl})` }}>
         <RichText content={richText} />
         {Array.isArray(links) && links.length > 0 && (
           <ul className={classes.links}>
@@ -27,19 +27,6 @@ export const CustomHero: React.FC<Page['hero']> = ({ richText, media, links }) =
           </ul>
         )}
       </div>
-      <div className={classes.media}>
-        {typeof media === 'object' && (
-          <Fragment>
-            <Media
-              resource={media}
-              // fill
-              imgClassName={classes.image}
-              priority
-            />
-            {media?.caption && <RichText content={media.caption} className={classes.caption} />}
-          </Fragment>
-        )}
-      </div>
-    </Gutter>
+    </section>
   )
 }
