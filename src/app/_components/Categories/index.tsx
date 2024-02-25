@@ -11,7 +11,9 @@ const Categories = () => {
       </div>
       
       <div className={classes.list}>
-
+        {categories.map((category) => (
+          <CategoryCard />
+        ))}
       </div>
     </section>
   )
