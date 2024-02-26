@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import classes from './index.module.scss'
+import CategoryCard from './CategoryCard'
 
 const Categories = () => {
   return (
@@ -12,7 +13,8 @@ const Categories = () => {
       
       <div className={classes.list}>
         {categories.map((category) => (
-          <CategoryCard />
+          <CategoryCard key={category.id}
+          category={category}/>
         ))}
       </div>
     </section>

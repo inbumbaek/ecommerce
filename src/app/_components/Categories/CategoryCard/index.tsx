@@ -1,8 +1,17 @@
 import React from 'react'
 
-const CategoryCard = () => {
+import classes from './index.module.scss'
+import Link from 'next/link'
+import { Category } from '../../../../payload/payload-types'
+type CategoryCardProps ={
+  category: Category
+}
+
+const CategoryCard = ({ category }: CategoryCardProps) => {
   return (
-    <div>CategoryCard</div>
+    <Link href="/products" className={classes.card}>
+      <p className={classes.title}>{category.title}</p>
+    </Link>
   )
 }
 
