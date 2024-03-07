@@ -5,8 +5,11 @@ import Filters from './Filters'
 import { Blocks } from '../../_components/Blocks'
 import { Category, Page } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
+import { fetchDocs } from '../../_api/fetchDocs'
 
 const Products = async () => {
+  const { isEnabled: isDraftMode } = draftMode()
+
   let page: Page | null = null
   let categories: Category[] | null = null
 
@@ -14,17 +17,20 @@ const Products = async () => {
     page = await fetchDoc<Page>({
       collection: 'pages',
       slug: 'products',
-      draft: isDraftMode
+      draft: isDraftMode,
     })
+
+    categories = await fetchDocs<Category>('categories')
+
   } catch (error) {
     console.log(error);
   }
 
   return (
     <div className={classes.container}>
-      <Gutter classeName={classes.products}>
+      <Gutter className={classes.products}>
         <Filters />
-        <Blocks blocks={layout} disableTopPadding={true}/>
+        <Blocks blocks={page.layout} disableTopPadding={true}/>
       </Gutter>
     </div>
   )
