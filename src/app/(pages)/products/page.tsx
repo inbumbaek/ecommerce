@@ -6,6 +6,7 @@ import { Blocks } from '../../_components/Blocks'
 import { Category, Page } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
+import { HR } from '../../_components/HR'
 
 const Products = async () => {
   const { isEnabled: isDraftMode } = draftMode()
@@ -32,6 +33,7 @@ const Products = async () => {
         <Filters />
         <Blocks blocks={page.layout} disableTopPadding={true}/>
       </Gutter>
+      <HR />
     </div>
   )
 }
