@@ -118,10 +118,13 @@ export const CollectionArchive: React.FC<Props> = props => {
           page,
           sort,
           where: {
-            ...(categories
+            ...(categoryFilters && categoryFilters?.length > 0
               ? {
                   categories: {
-                    in: categories,
+                    in: 
+                      typeof categoryFilters === 'string'
+                      ? [categoryFilters]
+                      : categoryFilters.map(cat => cat.id).join(','),
                   },
                 }
               : {}),
