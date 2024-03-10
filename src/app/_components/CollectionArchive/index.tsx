@@ -41,7 +41,6 @@ export type Props = {
 export const CollectionArchive: React.FC<Props> = props => {
   const { categoryFilters, sort } = useFilter();
   const {
-    categories: catsFromProps,
     className,
     limit = 10,
     onResultChange,
@@ -51,7 +50,6 @@ export const CollectionArchive: React.FC<Props> = props => {
     relationTo,
     selectedDocs,
     showPageRange,
-    sort = '-createdAt',
   } = props
 
   const [results, setResults] = useState<Result>({
