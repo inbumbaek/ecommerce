@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 
 import classes from './index.module.scss'
@@ -8,21 +10,22 @@ import { Checkbox } from 'payload/components/forms'
 const Filters = ({ categoreis }: { categories: Category[] }) => {
   const { categoryFilters, sort, setCategoryFilters, setSort } = useFilter()
 
-  const handleCategories = (categoryId: string) => {
-
-  }
+  const handleCategories = (categoryId: string) => {}
   return (
     <div className={classes.filters}>
       <div>
         <h6 className={classes.title}>Product Categories</h6>
         <div className={classes.categories}>
-          {categories.map((category) => {
-            const isSelected= false
+          {categories.map(category => {
+            const isSelected = false
 
             return (
-              <Checkbox 
+              <Checkbox
                 key={category.id}
                 label={category.title}
+                value={category.id}
+                isSelected={isSelected}
+                onClickHandler={handleCategories}
               />
             )
           })}
