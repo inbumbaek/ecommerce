@@ -7,7 +7,7 @@ import { useFilter } from '../../../_providers/Filter'
 import { Category } from '../../../../payload/payload-types'
 import { Checkbox } from 'payload/components/forms'
 
-const Filters = ({ categoreis }: { categories: Category[] }) => {
+const Filters = ({ categories }: { categories: Category[] }) => {
   const { categoryFilters, sort, setCategoryFilters, setSort } = useFilter()
 
   const handleCategories = (categoryId: string) => {}
