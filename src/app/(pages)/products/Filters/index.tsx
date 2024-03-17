@@ -34,6 +34,7 @@ const Filters = ({ categories }: { categories: Category[] }) => {
         <HR className={classes.hr}/>
         <h6 className={classes.title}></h6>
         <div className={classes.categories}></div>
+          <RadioButton />
       </div>
     </div>
   )
