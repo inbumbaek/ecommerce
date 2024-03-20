@@ -2,12 +2,13 @@
 
 import React from 'react'
 
-import classes from './index.module.scss'
-import { useFilter } from '../../../_providers/Filter'
 import { Category } from '../../../../payload/payload-types'
-import { Checkbox } from 'payload/components/forms'
+import { Checkbox } from '../../../_components/Checkbox'
 import { HR } from '../../../_components/HR'
 import { RadioButton } from '../../../_components/Radio'
+import { useFilter } from '../../../_providers/Filter'
+
+import classes from './index.module.scss'
 
 const Filters = ({ categories }: { categories: Category[] }) => {
   const { categoryFilters, sort, setCategoryFilters, setSort } = useFilter()
@@ -43,10 +44,10 @@ const Filters = ({ categories }: { categories: Category[] }) => {
             )
           })}
         </div>
-        <HR className={classes.hr}/>
-        <h6 className={classes.title}></h6>
-        <div className={classes.categories}></div>
-        <RadioButton
+        <HR className={classes.hr} />
+        <h6 className={classes.title}>Sort By</h6>
+        <div className={classes.categories}>
+          <RadioButton
             label="Latest"
             value="-createdAt"
             isSelected={sort === '-createdAt'}
@@ -60,6 +61,7 @@ const Filters = ({ categories }: { categories: Category[] }) => {
             onRadioChange={handleSort}
             groupName="sort"
           />
+        </div>
       </div>
     </div>
   )
