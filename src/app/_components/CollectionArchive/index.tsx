@@ -182,12 +182,10 @@ export const CollectionArchive: React.FC<Props> = props => {
               />
             </div>
         )}
-        <Gutter>
           <div className={classes.grid}>
             {results.docs?.map((result, index) => {
               if (typeof result === 'object' && result !== null) {
                 return (
-                  <div className={classes.column} key={index}>
                     <Card doc={result} relationTo={relationTo} showCategories />
                   </div>
                 )
@@ -204,7 +202,6 @@ export const CollectionArchive: React.FC<Props> = props => {
               totalPages={results.totalPages}
             />
           )}
-        </Gutter>
       </Fragment>
     </div>
   )
