@@ -24,6 +24,17 @@ export const ProductHero: React.FC<{
 
   return (
       <Gutter className={classes.productHero}>
+        <div className={classes.media}>
+          <div className={classes.mediaWrapper}>
+            {!metaImage && <div className={classes.placeholder}>No image</div>}
+            {metaImage && typeof metaImage !== 'string' && (
+              <Media imgClassName={classes.image} resource={metaImage} fill />
+            )}
+          </div>
+          {metaImage && typeof metaImage !== 'string' && metaImage?.caption && (
+            <RichText content={metaImage.caption} className={classes.caption} />
+          )}
+        </div>
           <div className={classes.categories}>
             {categories?.map((category, index) => {
               if (typeof category === 'object' && category !== null) {
@@ -56,17 +67,6 @@ export const ProductHero: React.FC<{
           </div>
           <Price product={product} button={false} />
           <AddToCartButton product={product} className={classes.addToCartButton} />
-        <div className={classes.media}>
-          <div className={classes.mediaWrapper}>
-            {!metaImage && <div className={classes.placeholder}>No image</div>}
-            {metaImage && typeof metaImage !== 'string' && (
-              <Media imgClassName={classes.image} resource={metaImage} fill />
-            )}
-          </div>
-          {metaImage && typeof metaImage !== 'string' && metaImage?.caption && (
-            <RichText content={metaImage.caption} className={classes.caption} />
-          )}
-        </div>
       </Gutter>
   )
 }
