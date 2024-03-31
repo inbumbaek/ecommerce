@@ -30,7 +30,11 @@ export const ProductHero: React.FC<{
           <Media imgClassName={classes.image} resource={metaImage} fill />
         )}
       </div>
-      
+
+      <div className={classes.details}>
+        <h3 className={classes.title}>{title}</h3>
+      </div>
+
       <div className={classes.categories}>
         {categories?.map((category, index) => {
           if (typeof category === 'object' && category !== null) {
@@ -51,7 +55,6 @@ export const ProductHero: React.FC<{
           return null
         })}
       </div>
-      <h1 className={classes.title}>{title}</h1>
       <div>
         <p className={classes.description}>
           {`${description ? `${description} ` : ''}To edit this product, `}
