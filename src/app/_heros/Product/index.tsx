@@ -30,9 +30,7 @@ export const ProductHero: React.FC<{
           <Media imgClassName={classes.image} resource={metaImage} fill />
         )}
       </div>
-      {metaImage && typeof metaImage !== 'string' && metaImage?.caption && (
-        <RichText content={metaImage.caption} className={classes.caption} />
-      )}
+      
       <div className={classes.categories}>
         {categories?.map((category, index) => {
           if (typeof category === 'object' && category !== null) {
