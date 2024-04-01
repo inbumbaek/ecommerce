@@ -52,6 +52,7 @@ export const ProductHero: React.FC<{
               }
             })}
           </div>
+          <p className={classes.stock}> In stock</p>
         </div>
       </div>
 
