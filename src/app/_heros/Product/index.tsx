@@ -57,14 +57,9 @@ export const ProductHero: React.FC<{
         <Price product={product} button={false} />
       </div>
 
-      <div>
-        <p className={classes.description}>
-          {`${description ? `${description} ` : ''}To edit this product, `}
-          <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL}/admin/collections/products/${id}`}>
-            navigate to the admin dashboard
-          </Link>
-          {'.'}
-        </p>
+      <div className={classes.description}>
+        <h6>Description</h6>
+        <p>{description}</p>
       </div>
 
       <AddToCartButton product={product} className={classes.addToCartButton} />
