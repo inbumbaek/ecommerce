@@ -14,6 +14,7 @@ import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
 
 import classes from './index.module.scss'
+import CartItem from '../CartItem'
 
 export const CartPage: React.FC<{
   settings: Settings
@@ -80,7 +81,14 @@ export const CartPage: React.FC<{
                   const metaImage = meta?.image
 
                   return (
-                    
+                    <CartItem
+                      product={product}
+                      title={title}
+                      metaImage={metaImage}
+                      index={index}
+                      qty={quantity}
+                      addItemToCart={addItemToCart}
+                    />
                   )
                 }
                 return null
