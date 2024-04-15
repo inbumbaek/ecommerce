@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import classes from './index.module.scss'
+import Link from 'next/link'
+import { Media } from '../../../_components/Media'
 
 const CartItem = ({ product, title, metaImage, qty, addItemToCart, index }) => {
   const [quantity, setQuantity] = useState(qty)
@@ -11,7 +13,12 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart, index }) => {
 
   return (
     <li className={classes.item} key={title}>
-      <h6>TITLE</h6>
+      <Link href={`/products/${product.slug}`} className={classes.mediaWrapper}>
+        {!metaImage && <span>No image</span>}
+        {metaImage && typeof metaImage !== 'string' && (
+          <Media className={classes.media} imgClassName={classes.image} resource={metaImage} fill />
+        )}
+      </Link> 
     </li>
   )
 }
