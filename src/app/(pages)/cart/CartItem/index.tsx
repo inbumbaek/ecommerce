@@ -5,6 +5,7 @@ import classes from './index.module.scss'
 import Link from 'next/link'
 import { Media } from '../../../_components/Media'
 import { Price } from '../../../_components/Price'
+import Image from 'next/image'
 
 const CartItem = ({ product, title, metaImage, qty, addItemToCart, index }) => {
   const [quantity, setQuantity] = useState(qty)
@@ -25,6 +26,13 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart, index }) => {
         <div className={classes.titleWrapper}>
           <h6>{title}</h6>
           <Price product={product} button={false} />
+        </div>
+
+        <div className={classes.quantity}>
+          <div className={classes.quantityButton} onClick={decrementQty}>
+            <Image src="/assets/icons/minus.svg" alt="minus" width={24} height={24} className={classes.qtnBt} />
+          </div>
+
         </div>
       </div>
     </li>
