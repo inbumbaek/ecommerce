@@ -29,10 +29,10 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart, index }) => {
         </div>
 
         <div className={classes.quantity}>
-          <div className={classes.quantityButton} onClick={decrementQty}>
+          <div className={classes.quantityBtn} onClick={decrementQty}>
             <Image src="/assets/icons/minus.svg" alt="minus" width={24} height={24} className={classes.qtnBt} />
           </div>
-          <div className={classes.quantityButton} onClick={incrementQty}>
+          <div className={classes.quantityBtn} onClick={incrementQty}>
             <Image src="/assets/icons/plus.svg" alt="plus" width={24} height={24} className={classes.qtnBt} />
           </div>
 
