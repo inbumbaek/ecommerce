@@ -30,10 +30,13 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart, index }) => {
 
         <div className={classes.quantity}>
           <div className={classes.quantityBtn} onClick={decrementQty}>
-            <Image src="/assets/icons/minus.svg" alt="minus" width={24} height={24} className={classes.qtnBt} />
-          </div>
-          <div className={classes.quantityBtn} onClick={incrementQty}>
-            <Image src="/assets/icons/plus.svg" alt="plus" width={24} height={24} className={classes.qtnBt} />
+            <Image
+              src="/assets/icons/minus.svg"
+              alt="minus"
+              width={24}
+              height={24}
+              className={classes.qtnBt}
+            />
           </div>
 
           <input
@@ -43,7 +46,21 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart, index }) => {
             onChange={enterQty}
           />
 
+          <div className={classes.quantityBtn} onClick={incrementQty}>
+            <Image
+              src="/assets/icons/plus.svg"
+              alt="plus"
+              width={24}
+              height={24}
+              className={classes.qtnBt}
+            />
+          </div>
         </div>
+      </div>
+
+      <div className={classes.subtotalWrapper}>
+        <Price product={product} button={false} quantity={quantity} />
+
       </div>
     </li>
   )
