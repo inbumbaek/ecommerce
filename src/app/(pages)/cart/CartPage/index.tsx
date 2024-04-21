@@ -93,6 +93,9 @@ export const CartPage: React.FC<{
                 return null
               })}
               <div className={classes.summary}>
+                <div className={classes.row}>
+                  <h6 className={classes.cartTotal}>Summary</h6>
+                </div>
                 <Button
                   className={classes.checkoutButton}
                   href={user ? '/checkout' : '/login?redirect=%2Fcheckout'}
