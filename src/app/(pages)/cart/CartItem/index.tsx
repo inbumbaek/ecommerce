@@ -16,7 +16,12 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart, index }) => {
     setQuantity(updatedQty)
     addItemToCart({ product, quantity: Number(updatedQty) })
   }
-  const incrementQty = () => {}
+  const incrementQty = () => {
+    const updatedQty = quantity + 1
+
+    setQuantity(updatedQty)
+    addItemToCart({ product, quantity: Number(updatedQty) })
+  }
   const enter Qty = () => {}
 
   return (
