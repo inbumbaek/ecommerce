@@ -29,11 +29,11 @@ export default async function Checkout() {
   }
 
   return (
-    
+    <div>
       <Gutter className={classes.checkoutPage}>
         <CheckoutPage settings={settings} />
       </Gutter>
-    </Fragment>
+    </div>
   )
 }
 
